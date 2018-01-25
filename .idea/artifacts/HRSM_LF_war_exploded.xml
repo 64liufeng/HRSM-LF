@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="HRSM-LF:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/HRSM_LF_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="HRSM-LF/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="HRSM-LF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
