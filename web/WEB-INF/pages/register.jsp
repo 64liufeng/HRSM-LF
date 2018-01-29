@@ -6,8 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
 <html>
 <head>
+    <base href="<%=basePath%>"/>
     <title>Title</title>
     <style>
         div{
@@ -59,13 +64,16 @@
                 document.getElementById("sp2").style.fontWeight = "bold";
             }
         }
-        function checkpost(){
-        if(document.forms[0].pw.value1!=document.forms[0].cfpw.value){
-            window.location="密码不正确";
-        }else{
-         alert("正确！")
-         return false;
-         }
+        function confirmPass() {
+            var password=document.getElementById("pass").value;
+            var cpass=document.getElementById("cpass").value;
+            if(cpass==pass && cpass!=""&& cpass!=null&&pass!=null&&pass!=""){
+                document.getElementById("sp3").innerHTML="√ 成功";
+                document.getElementById("sp3").style.color="green";
+            }else {
+                document.getElementById("sp3").innerHTML="× 密码输入不一致,请重新输入";
+                document.getElementById("sp3").style.color="red";
+            }
         }
     </script>
 </head>
@@ -76,7 +84,7 @@
        <div>注册账号</div>
         账号：<input type = "text" name="userName" id="userName" onblur="checkName()"/><span id="sp1"></span><br>
         密码：<input type="text" name="userPass" id="pass" onblur="checkPass()"/><span id="sp2"></span><br>
-       确认密码：<input type="password" name="lastname" id="cfpw" onsubmit="checkpost()"/><br>
+       确认密码：<input  type="password"  name="userPass" id="cpass" onblur="confirmPass()"><span id="sp3"></span><br>
        <span id="sp"></span>
        <input type="submit" value="确认"/>
     </table>

@@ -8,5 +8,5 @@ import com.model.User;
  */
 public interface UserMapper {
     boolean addUser(User user);
-    User getUserByID(User user);
+    User getUserById(User user);
 }

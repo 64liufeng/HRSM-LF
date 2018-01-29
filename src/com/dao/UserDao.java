@@ -10,6 +10,7 @@ import java.util.Map;
  * Created by Administrator on 2018/1/9 0009.
  */
 public interface UserDao {
+    User login(User user);
     boolean addUser(User user);
     boolean updateUser(User user);
     boolean deleteUser(User user);

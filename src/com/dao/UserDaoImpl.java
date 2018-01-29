@@ -2,10 +2,13 @@ package com.dao;
 
 ;
 import com.model.User;
+import org.apache.ibatis.session.SqlSession;
+import org.hibernate.Session;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
+import javax.management.Query;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -33,6 +36,25 @@ public class UserDaoImpl implements UserDao {
 
     public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
+    }
+
+    @Override
+    public User login(User user) {
+        SqlSession sqlSession = (SqlSession) MySessionFactory.getSession();
+        String hql ="from user where name=? and pass=?";
+        Query query = session.createQuery(hql);
+        query.setString(0,user.getName());
+        query.setString(1,user.getPass());
+        List<User> users = null;
+        try {
+            users = query.list();
+            if(0!=users.size()||null!=users){
+                return  users.get(0);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
@@ -108,4 +130,5 @@ public class UserDaoImpl implements UserDao {
             }
         });
     }
+
 }

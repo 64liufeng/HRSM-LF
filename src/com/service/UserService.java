@@ -16,4 +16,6 @@ public interface UserService {
     User listUser(User user);
     List<Map<String,Object>> listAll();
     List<User> listUsers();
+
+    User getUserById(int uid);
 }

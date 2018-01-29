@@ -5,9 +5,9 @@
 <mapper namespace="com.mapper.UserMapper">
 
     <insert id="addUser">
-        insert into T_USER (U_ID, U_NAME, U_PASS) values (U_SEQ.nextval,#{u_name},#{u_pass})
+        insert into T_USER (U_Id, U_NAME, U_PASS) values (U_SEQ.nextval,#{u_name},#{u_pass})
     </insert>
-    <select id="getUserByID" resultType="com.iotek.model.User">
-        select * from T_USER where U_ID=#{u_id}
+    <select id="getUserById" resultType="com.model.User">
+        select * from T_USER where U_Id=#{u_id}
     </select>
 </mapper>

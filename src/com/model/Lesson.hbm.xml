@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   <class name="com.model.Lesson" table="lesson">
+       <id name="lesID" column="lesID">
+           <generator class="native"/>
+       </id>
+       <property name="leName" column="leName"/>
+       <!--IOC inverse of control-->
+        <set name="students" table="stutoles" cascade="all" inverse="true">
+            <key column="lesID"></key>
+            <many-to-many class="com.model.Student" column="stuID"/>
+        </set>
+
+   </class>
+</hibernate-mapping>
