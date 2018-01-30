@@ -1,26 +1,20 @@
 package com.model;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
-public class User implements Serializable{
+public class User implements Serializable {
     private int id;
-    private String name;
-    private String pass;
-    private String sex;
-    private int money;
-    private Set<UserDetail> userDetails = new HashSet<>();
+    private String username;
+    private String password;
+
+    /* private Set<UserDetail> userDetails = new HashSet<>();*/
     public User() {
     }
 
-    public User(int id, String name, String pass, String sex, int money, Set<UserDetail> userDetails) {
+    public User(int id, String username, String password) {
         this.id = id;
-        this.name = name;
-        this.pass = pass;
-        this.sex = sex;
-        this.money = money;
-        this.userDetails = userDetails;
+        this.username = username;
+        this.password = password;
     }
 
     public int getId() {
@@ -31,55 +25,28 @@ public class User implements Serializable{
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
-    }
-
-    public Set<UserDetail> getUserDetails() {
-        return userDetails;
-    }
-
-    public void setUserDetails(Set<UserDetail> userDetails) {
-        this.userDetails = userDetails;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", pass='" + pass + '\'' +
-                ", sex='" + sex + '\'' +
-                ", money=" + money +
-                ", userDetails=" + userDetails +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

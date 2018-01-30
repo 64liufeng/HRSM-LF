@@ -1,8 +1,8 @@
 package com.controller;
 
+import com.dao.UserDao;
 import com.dao.UserDaoImpl;
 import com.model.User;
-import com.service.UserServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "UserServlet",urlPatterns = "/user")
 public class UserServlet extends HttpServlet {
@@ -20,20 +22,21 @@ public class UserServlet extends HttpServlet {
          response.setContentType("text/html,charset=UTF-8");
 
         User user = new User();
-        user.setName(request.getParameter("name"));
-        user.setPass(request.getParameter("pass"));
+        user.setUsername(request.getParameter("username"));
+        user.setPassword(request.getParameter("password"));
         UserDaoImpl userDao = new UserDaoImpl();
-        User user1 = userDao.login(user);
+       /* User user1 = userDao.listUser(User user);*/
+        List<User> user1 = new ArrayList<>();
         if (null!=user1){
             HttpSession session = request.getSession();
-            session.setAttribute("u",user1);
+            session.setAttribute("user",user1);
             response.sendRedirect("pages/success.jsp");
         }else {
-            response.sendRedirect("pages/login.jsp");
+            response.sendRedirect("index.jsp");
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        this.doPost(request,response);
     }
 }

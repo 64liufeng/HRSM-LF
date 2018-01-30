@@ -58,8 +58,8 @@
 </table>
 <form action="register" method="post">
     <div>登陆账号</div>
-    用户    ：<input type="text" onblur="checkName(this.value)"/><br>
-    密码    ：<input type="password" onblur="show()"/><br>
+    用户    ：<input type="text" name="username" onblur="checkName(this.value)"/><br>
+    密码    ：<input type="password" name="password" onblur="show()"/><span id="sp"></span><br>
     <input type="submit" value="登陆"/>
     <a href="register.jsp">注册</a>
 </form>

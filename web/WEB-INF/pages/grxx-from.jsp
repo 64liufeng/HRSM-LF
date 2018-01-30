@@ -92,7 +92,7 @@
     </script>
 </head>
 <body>
-   <form>
+   <form action="" method="post">
        <table>
            <div align="centre">个人信息</div><br>
 
@@ -107,9 +107,10 @@
            e-mail：<input  type="text" name="mail" id="mail" onblur="checkmail()"><span id="sp4"></span><br>
            家庭地址：<input type="text" name="address" id="address"></span><br>
            现居住地：<input type="text" name="newAddress" id="newAddress" ><br>
-           <input type="submit" value="保存">
-           <input type="submit" value="修改">
+
        </table>
+       <input type="submit" value="保存">
+       <input type="submit" value="修改">
    </form>
 </body>
 </html>
