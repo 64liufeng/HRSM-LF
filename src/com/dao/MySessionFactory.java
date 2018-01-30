@@ -1,10 +1,5 @@
 package com.dao;
 
-
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.service.ServiceRegistryBuilder;
-
 import javax.imageio.spi.ServiceRegistry;
 import javax.security.auth.login.Configuration;
 

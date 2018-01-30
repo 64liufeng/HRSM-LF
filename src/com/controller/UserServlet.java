@@ -19,7 +19,6 @@ public class UserServlet extends HttpServlet {
          response.setCharacterEncoding("UTF-8");
          response.setContentType("text/html,charset=UTF-8");
 
-        UserServiceImpl userService = new UserServiceImpl();
         User user = new User();
         user.setName(request.getParameter("name"));
         user.setPass(request.getParameter("pass"));
