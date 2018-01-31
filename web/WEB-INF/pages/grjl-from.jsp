@@ -45,16 +45,16 @@
         籍贯：<input name="place"/><br>
         身份证号：<input name="ID_number"/><br>
         手机号：<input name="phone"/><br>
-        e-mail：<input name="e-mail"/><br>
+        e-mail：<input name="mail"/><br>
         家庭地址：<input name="address"/><br>
         现居住地：<input name="newAddress"/><br>
         专业：<input name="prof" /><br>
         学历：<inpt name="education" /><br>
         毕业学院：<input name="university"/><br>
         主修课程：<textarea name="majorCourse" id="majorCourse" cols="130" rows="10"></textarea><br>
-        专业技能：<textarea name="Professional-skills" id="Professional-skills" cols="130" rows="10"></textarea><br>
+        专业技能：<textarea name="Professional_skills" id="Professional-skills" cols="130" rows="10"></textarea><br>
         <div>求职意向</div><br>
-        到岗时间：<input name="to-date"/><br>
+        到岗时间：<input name="to_date"/><br>
         工作性质：<input name="work"><br>
         希望行业：<textarea name="industry" id="industry" cols="130" rows="10"></textarea><br>
         工作地点：<input name="workAddress"/><br>
